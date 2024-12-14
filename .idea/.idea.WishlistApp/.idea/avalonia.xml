@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="WishlistApp/App.axaml" value="WishlistApp/WishlistApp.csproj" />
+        <entry key="WishlistApp/LoginView.axaml" value="WishlistApp/WishlistApp.csproj" />
+        <entry key="WishlistApp/Views/LoginView.axaml" value="WishlistApp/WishlistApp.csproj" />
+        <entry key="WishlistApp/Views/LoginWindowView.axaml" value="WishlistApp/WishlistApp.csproj" />
+        <entry key="WishlistApp/Views/MainContentView.axaml" value="WishlistApp/WishlistApp.csproj" />
+        <entry key="WishlistApp/Views/MainWindow.axaml" value="WishlistApp/WishlistApp.csproj" />
+        <entry key="WishlistApp/Views/RegisterView.axaml" value="WishlistApp/WishlistApp.csproj" />
+        <entry key="WishlistApp/Views/RegisterWindowView.axaml" value="WishlistApp/WishlistApp.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,63 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:WishlistApp.ViewModels"
+             x:Class="WishlistApp.Views.RegisterWindowView"
+             x:DataType="vm:RegisterWindowViewModel">
+    <Grid Background="#f0f0f0" Height="1920" Width="1080">
+        <!-- Основной фон -->
+        <Border
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            CornerRadius="20"
+            Width="400"
+            Padding="30"
+            Opacity="0.85">
+            <!-- Форма для регистрации -->
+            <StackPanel>
+                <TextBlock Text="Register" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="10" />
+                
+                <TextBox
+                    Watermark="Name"
+                    Text="{Binding Name}"
+                    Margin="10"
+                    Height="40"
+                    Classes="large-input" />
+                
+                <TextBox
+                    Watermark="Email"
+                    Text="{Binding Email}"
+                    Margin="10"
+                    Height="40"
+                    Classes="large-input" />
+                
+                <TextBox
+                    Watermark="Password"
+                    Text="{Binding Password}"
+                    Margin="10"
+                    Height="40"
+                    PasswordChar="*"
+                    Classes="large-input" />
+                
+                <Button
+                    Classes="Primary"
+                    Content="Register"
+                    Command="{Binding RegisterCommand}"
+                    Margin="10"
+                    Height="45" />
+                
+                <Button
+                    Classes="Secondary"
+                    Content="Already have an account? Login"
+                    Command="{Binding NavigateToLoginCommand}"
+                    Margin="10"
+                    Height="40" />
+                
+                <TextBlock
+                    Text="{Binding StatusMessage}"
+                    Foreground="Red"
+                    FontSize="12"
+                    HorizontalAlignment="Center" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

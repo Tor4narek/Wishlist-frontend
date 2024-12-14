@@ -1,0 +1,16 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:wishlistApp="clr-namespace:WishlistApp"
+             xmlns:semi="https://irihi.tech/semi"
+             x:Class="WishlistApp.App">
+    
+    <Application.Styles>
+        <semi:SemiTheme Locale="en-US" />
+        <StyleInclude Source="avares://Semi.Avalonia.ColorPicker/Index.axaml" />
+        <StyleInclude Source="avares://Semi.Avalonia.DataGrid/Index.axaml" />
+        <StyleInclude Source="avares://Semi.Avalonia.TreeDataGrid/Index.axaml" />
+    </Application.Styles>
+    <Application.DataTemplates>
+        <wishlistApp:ViewLocator />
+    </Application.DataTemplates>
+</Application>

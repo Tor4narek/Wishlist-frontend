@@ -69,6 +69,10 @@
               "target": "Package",
               "version": "[8.2.1, )"
             },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Semi.Avalonia": {
               "target": "Package",
               "version": "[11.2.1.2, )"
@@ -84,6 +88,10 @@
             "Semi.Avalonia.TreeDataGrid": {
               "target": "Package",
               "version": "[11.0.10.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.3.0, )"
             }
           },
           "imports": [

@@ -36,6 +36,7 @@
                     Height="45" />
                 <Button
                     Classes="Secondary"
+                    Theme="{DynamicResource BorderlessButton}"
                     Content="New user? Register"
                     Command="{Binding NavigateToRegisterCommand}"
                     Margin="10"

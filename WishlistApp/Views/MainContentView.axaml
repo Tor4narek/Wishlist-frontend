@@ -1,9 +1,94 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:WishlistApp.ViewModels"
+             xmlns:models="clr-namespace:WishlistApp.Models"
              x:Class="WishlistApp.Views.MainContentView"
              x:DataType="vm:MainContentViewModel">
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBlock Text="{Binding Greeting}" FontSize="24" />
-    </StackPanel>
+    <UserControl.DataContext>
+        <vm:MainContentViewModel />
+    </UserControl.DataContext>
+    <DockPanel LastChildFill="True">
+        <!-- Верхняя панель -->
+        <Border Height="48" Background="White" DockPanel.Dock="Top">
+            <TextBlock Margin="16 16 0 10" Text="Wishlist" FontWeight="Bold" FontSize="16" />
+        </Border>
+        
+        <!-- Нижняя панель -->
+        <Border Height="50" Background="#f1f8ff" DockPanel.Dock="Bottom">
+            <Button
+                Classes="Secondary"
+                Content="Log out"
+                Margin="0 10 0 10"
+                Height="45" 
+                />
+        </Border>
+
+        <!-- Левая панель -->
+        <Border Background="#f1f8ff" CornerRadius="0 12 0 0" DockPanel.Dock="Left">
+            <StackPanel Margin="10 16 0 0" HorizontalAlignment="Left">
+                <Button Classes="Primary" Content="My page" Margin="0 0 0 4" Height="45" HorizontalAlignment="Left" />
+                <Button Classes="Primary" Content="Search friends" Margin="0 0 0 4" Height="45" HorizontalAlignment="Left"/>
+                <Button Classes="Primary" Content="Gifts for friends" Margin="0 0 0 4" Height="45" HorizontalAlignment="Left" />
+            </StackPanel>
+        </Border>
+        
+        <!-- Основной контент -->
+        <Border Background="White">
+            <StackPanel Margin="0 16 0 0">
+                <TextBlock Margin="24 0 0 0" Text="{Binding Greeting}" FontSize="24" />
+                
+                <!-- Верхняя панель с кнопкой -->
+                <WrapPanel Margin="24 8 0 0">
+                    <TextBlock Text="My wishlists" FontSize="18" FontWeight="Bold" Foreground="#000000" VerticalAlignment="Center" />
+                    <Button
+                        Classes="Primary"
+                        Content="Create wishlist"
+                        Height="45"
+                        Margin="10 0 0 0"
+                        Command="{Binding OpenCreateWishlistModalCommand}" />
+                </WrapPanel>
+                <WrapPanel  Margin="16 4 0 0 ">
+                <!-- Список вишлистов -->
+                <ItemsControl ItemsSource="{Binding Wishlists}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate  DataType="{x:Type models:Wishlist}">
+                            <Button Background="#f1f8ff" CornerRadius="12" Padding="16" BorderBrush="#E4E7EB" BorderThickness="1" Margin="8">
+                                <StackPanel>  
+                                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0,0,0,12">
+                                    <TextBlock Text="{Binding Name}" FontSize="18" FontWeight="Bold" Foreground="#000000" VerticalAlignment="Center" />
+                                    <TextBlock Text="{Binding PresentsNumber}" FontSize="14" Foreground="#7A7A7A" VerticalAlignment="Center"/>
+                                    
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <TextBlock Text="31.12.2024" FontSize="14" Foreground="#7A7A7A" VerticalAlignment="Center"/>
+                                    <Border Background="#FFD700" CornerRadius="8" Padding="4,2" Margin="8,0,0,0">
+                                        <TextBlock Text="Через 11 дней" FontSize="12" Foreground="White" VerticalAlignment="Center"/>
+                                    </Border>
+                                </StackPanel>
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+        
+        <!-- Модальное окно -->
+        <ContentControl IsVisible="{Binding IsCreateWishlistModalVisible}">
+            <Border Background="#FFFFFF" CornerRadius="12" Padding="16" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel>
+                    <TextBlock Text="Create Wishlist" FontSize="20" FontWeight="Bold" Margin="0 0 0 16" />
+                    
+                    <TextBox Watermark="Wishlist name" Text="{Binding NewWishlistName}" Margin="0 8" />
+                    <TextBox Watermark="Description" Text="{Binding NewWishlistDescription}" Margin="0 8" />
+                    
+                    <WrapPanel HorizontalAlignment="Right" Margin="0 16 0 0">
+                        <Button Content="Cancel" Command="{Binding CloseCreateWishlistModalCommand}" Margin="0 0 8 0" />
+                        <Button Content="Create" Classes="Primary" Command="{Binding CreateWishlistCommand}" />
+                    </WrapPanel>
+                </StackPanel>
+            </Border>
+        </ContentControl>
+    </DockPanel>
 </UserControl>

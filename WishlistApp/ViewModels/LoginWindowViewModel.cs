@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Threading.Tasks;
+using WishlistApp.Models;
 using WishlistApp.Services;
 
 namespace WishlistApp.ViewModels;
@@ -41,7 +42,7 @@ public partial class LoginWindowViewModel : ViewModelBase
         var (message, token, userId) = await _authService.LoginAsync(Email, Password);
         if (token != null && userId != null)
         {
-            
+            UserService.DecodeJwtToken(token);
             _navigateToMain();
         }
         else

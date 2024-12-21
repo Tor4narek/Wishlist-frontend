@@ -3,6 +3,8 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using WishlistApp.Models;
+
 
 namespace WishlistApp.Services
 {
@@ -94,15 +96,5 @@ namespace WishlistApp.Services
         public User? User { get; set; }
     }
 
-    public class User
-    {
-        [JsonPropertyName("id")]
-        public string? Id { get; set; }
-
-        [JsonPropertyName("name")]
-        public string? Name { get; set; }
-
-        [JsonPropertyName("email")]
-        public string? Email { get; set; }
-    }
+  
 }

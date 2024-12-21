@@ -72,3 +72,11 @@ C:\Users\ekre4\RiderProjects\WishlistApp\WishlistApp\bin\Debug\net8.0\Semi.Avalo
 C:\Users\ekre4\RiderProjects\WishlistApp\WishlistApp\bin\Debug\net8.0\Semi.Avalonia.DataGrid.dll
 C:\Users\ekre4\RiderProjects\WishlistApp\WishlistApp\bin\Debug\net8.0\Semi.Avalonia.TreeDataGrid.dll
 C:\Users\ekre4\RiderProjects\WishlistApp\WishlistApp\bin\Debug\net8.0\System.Reactive.dll
+C:\Users\ekre4\RiderProjects\WishlistApp\WishlistApp\obj\Debug\net8.0\WishlistApp.sourcelink.json
+C:\Users\ekre4\RiderProjects\WishlistApp\WishlistApp\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ekre4\RiderProjects\WishlistApp\WishlistApp\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ekre4\RiderProjects\WishlistApp\WishlistApp\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ekre4\RiderProjects\WishlistApp\WishlistApp\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ekre4\RiderProjects\WishlistApp\WishlistApp\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ekre4\RiderProjects\WishlistApp\WishlistApp\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ekre4\RiderProjects\WishlistApp\WishlistApp\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

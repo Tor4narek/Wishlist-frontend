@@ -33,3 +33,12 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/ekre4/RiderProjects/WishlistApp/WishlistApp/Views/RegisterWindowView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/ekre4/RiderProjects/WishlistApp/WishlistApp/Views/SearchUsersWindowView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/ekre4/RiderProjects/WishlistApp/WishlistApp/Views/UserWishlistWindowView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/ekre4/RiderProjects/WishlistApp/WishlistApp/Views/WishlistWindowView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

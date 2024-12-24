@@ -1,0 +1,88 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:WishlistApp.ViewModels"
+             xmlns:models="clr-namespace:WishlistApp.Models"
+             x:Class="WishlistApp.Views.SearchUsersWindowView"
+             x:DataType="vm:SearchUsersWindowViewModel"
+             Name="SearchUsers"
+             x:CompileBindings="False"
+             >
+    
+    <!-- <UserControl.DataContext> -->
+    <!--     vm:SearchUsersWindowViewModel -->
+    <!-- </UserControl.DataContext> -->
+    <DockPanel LastChildFill="True">
+        <!-- Верхняя панель -->
+        <Border Height="48" Background="White" DockPanel.Dock="Top">
+            <TextBlock Margin="16 16 0 10" Text="Wishlist" FontWeight="Bold" FontSize="16" />
+        </Border>
+        
+        <!-- Нижняя панель -->
+        <Border Height="50" Background="#f1f8ff" DockPanel.Dock="Bottom">
+            <Button
+                Classes="Secondary"
+                Content="Log out"
+                Margin="0 10 0 10"
+                Height="45" 
+                />
+        </Border>
+
+        <!-- Левая панель -->
+        <Border Background="#f1f8ff" CornerRadius="0 12 0 0" DockPanel.Dock="Left">
+            <StackPanel Margin="10 16 0 0" HorizontalAlignment="Left">
+                <Button Classes="Primary" Content="My page" Margin="0 0 0 4" Height="45" HorizontalAlignment="Left" Command="{Binding NavigateToMain}" />
+                <Button Classes="Primary" Content="Search friends" Margin="0 0 0 4" Height="45" HorizontalAlignment="Left"/>
+                <Button Classes="Primary" Content="Gifts for friends" Margin="0 0 0 4" Height="45" HorizontalAlignment="Left" />
+            </StackPanel>
+        </Border>
+        
+        <!-- Основной контент -->
+        <Border Background="White">
+            <StackPanel Margin="0 16 0 0">
+                <TextBlock Margin="24 0 0 0" Text="Search friends" FontSize="24" />
+                <!-- Верхняя панель с кнопкой -->
+                <WrapPanel Margin="24 8 0 0">
+                    <TextBox
+                        Watermark="friend`s email"
+                        Text="{Binding SearchEmail}"
+                        Margin="10"
+                        Height="40"
+                        Classes="large-input" />
+                    <Button
+                        Classes="Primary"
+                        Content="Search"
+                        Height="45"
+                        Margin="10 0 0 0"
+                        Command="{Binding SearchCommand}"
+                         />
+                </WrapPanel>
+                <WrapPanel  Margin="16 4 0 0 ">
+                <!-- Список пользователей -->
+                <ItemsControl ItemsSource="{Binding Users}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate  DataType="{x:Type models:User}">
+                            <Button Background="#f1f8ff" CornerRadius="12" Padding="16" BorderBrush="#E4E7EB" BorderThickness="1" Margin="8" Command="{Binding #SearchUsers.DataContext.OnWishlistSelectedCommand}" CommandParameter="{Binding}"  >
+                                <StackPanel>  
+                                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0,0,0,12">
+                                    <TextBlock Text="{Binding Name}" FontSize="18" FontWeight="Bold" Foreground="#000000" VerticalAlignment="Center" />
+                                    <TextBlock Text="{Binding Email}" FontSize="14" Foreground="#7A7A7A" VerticalAlignment="Center"/>
+                                    
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                   
+                                    <Border Background="#FFD700" CornerRadius="8" Padding="4,2" Margin="8,0,0,0">
+                                        <TextBlock Text="2 wishlists" FontSize="12" Foreground="White" VerticalAlignment="Center"/>
+                                    </Border>
+                                </StackPanel>
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+        
+    
+    </DockPanel>
+</UserControl>

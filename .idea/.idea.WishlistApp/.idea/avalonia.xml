@@ -11,6 +11,9 @@
         <entry key="WishlistApp/Views/MainWindow.axaml" value="WishlistApp/WishlistApp.csproj" />
         <entry key="WishlistApp/Views/RegisterView.axaml" value="WishlistApp/WishlistApp.csproj" />
         <entry key="WishlistApp/Views/RegisterWindowView.axaml" value="WishlistApp/WishlistApp.csproj" />
+        <entry key="WishlistApp/Views/SearchUsersWindowView.axaml" value="WishlistApp/WishlistApp.csproj" />
+        <entry key="WishlistApp/Views/UserWishlistWindowView.axaml" value="WishlistApp/WishlistApp.csproj" />
+        <entry key="WishlistApp/Views/WishlistWindowView.axaml" value="WishlistApp/WishlistApp.csproj" />
       </map>
     </option>
   </component>

@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System;
+using WishlistApp.Models;
+using WishlistApp.Services;
 
 namespace WishlistApp.ViewModels;
 
@@ -26,6 +28,25 @@ public partial class MainWindowViewModel : ViewModelBase
 
     private void SwitchToMain()
     {
-        CurrentViewModel = new MainContentViewModel();
+        var mainContentViewModel = new MainContentViewModel();
+        CurrentViewModel = mainContentViewModel;
+        WishlistNavigationService.CurrentAction = SwitchToWishList;
+        NavigationService.CurrentAction = SwitchToSearchUsers;
+
+    }
+    private void SwitchToWishList()
+    {
+        CurrentViewModel = new WishlistWindowViewModel(SwitchToMain);
+    }
+
+    private void SwitchToSearchUsers()
+    {
+        CurrentViewModel = new SearchUsersWindowViewModel(SwitchToMain);
+        NavigationService.CurrentAction = SwitchToUserWishLists;
+    }
+
+    private void SwitchToUserWishLists()
+    {
+        CurrentViewModel = new UserWishlistWindowViewModel(SwitchToSearchUsers);
     }
 }

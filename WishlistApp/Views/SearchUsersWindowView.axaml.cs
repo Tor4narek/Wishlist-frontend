@@ -7,25 +7,19 @@ using WishlistApp.ViewModels;
 
 namespace WishlistApp.Views;
 
-public partial class MainContentView : UserControl
+public partial class SearchUsersWindowView : UserControl
 {
-    public MainContentView()
+    public SearchUsersWindowView()
     {
         InitializeComponent();
-       
-
     }
-    // Метод для обработки нажатий на кнопки внутри ItemsControl
     private void OnWishlistButtonClick(object sender, RoutedEventArgs e)
     {
-        if (sender is Button button && button.DataContext is Wishlist clickedWishlist)
+        if (sender is Button button && button.DataContext is User clickedUser)
         {
             // Здесь вызывается метод ViewModel с информацией о выбранном Wishlist
-            var viewModel = DataContext as MainContentViewModel;
-            viewModel?.OnWishlistSelected(clickedWishlist);
+            var viewModel = DataContext as SearchUsersWindowViewModel;
+            viewModel?.OnUserSelected(clickedUser);
         }
     }
-
-
-   
 }
